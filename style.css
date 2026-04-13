@@ -1,0 +1,110 @@
+:root {
+  --brunswick-green: #344e41ff;
+  --wheat: #ead2acff;
+  --light-coral: #df928eff;
+  --old-rose: #c58882ff;
+  --platinum: #d1dedeff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: white;
+  background: var(--brunswick-green);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.compliment-text {
+  font-size: 2rem;
+  font-weight: normal;
+  color: white;
+}
+
+.divider {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.divider-container {
+  width: 400px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compliment-date {
+  font-size: 0.9rem;
+  color: white;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-top: 25vh;
+  }
+
+  .compliment-text {
+    font-size: 1.75rem;
+  }
+
+  .divider-container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 20vh;
+  }
+
+  .compliment-text {
+    font-size: 1.5rem;
+  }
+
+  .divider-container {
+    width: 250px;
+  }
+}
+
+.divider-svg {
+  transform: scale(3);
+}
+
+.flower-svg {
+  opacity: 0.3;
+  fill: #2a3a2e;
+}
+
+.flower-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
