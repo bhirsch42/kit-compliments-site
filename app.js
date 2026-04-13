@@ -1,47 +1,5 @@
-const LS_SEEN = "kit-compliments-seen";
-const LS_DATE = "kit-compliments-date";
-const LS_CURRENT = "kit-compliments-current";
-
 function todayString() {
   return new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-}
-
-function pickCompliment(compliments) {
-  const today = todayString();
-  const storedDate = localStorage.getItem(LS_DATE);
-  const storedCurrent = localStorage.getItem(LS_CURRENT);
-
-  // Same day — return the same compliment
-  if (storedDate === today && storedCurrent !== null) {
-    const idx = parseInt(storedCurrent, 10);
-    if (idx >= 0 && idx < compliments.length) {
-      return { index: idx, text: compliments[idx] };
-    }
-  }
-
-  // New day — pick the next unseen compliment
-  let seen = [];
-  try {
-    seen = JSON.parse(localStorage.getItem(LS_SEEN) || "[]");
-  } catch (_) {
-    seen = [];
-  }
-
-  // Find first unseen
-  let nextIdx = compliments.findIndex((_, i) => !seen.includes(i));
-
-  // All seen — reset
-  if (nextIdx === -1) {
-    seen = [];
-    nextIdx = 0;
-  }
-
-  seen.push(nextIdx);
-  localStorage.setItem(LS_SEEN, JSON.stringify(seen));
-  localStorage.setItem(LS_DATE, today);
-  localStorage.setItem(LS_CURRENT, String(nextIdx));
-
-  return { index: nextIdx, text: compliments[nextIdx] };
 }
 
 function formatDate() {
@@ -110,7 +68,7 @@ async function init() {
   const response = await fetch("compliments.json");
   const compliments = await response.json();
 
-  const { text } = pickCompliment(compliments);
+  const { text } = pickCompliment(compliments, localStorage, todayString());
 
   document.getElementById("compliment-text").textContent = text;
   document.getElementById("compliment-date").textContent = formatDate();

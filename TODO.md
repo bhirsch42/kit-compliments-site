@@ -23,14 +23,8 @@
 ## DNS / Custom Domain
 
 - [x] In GitHub repo Settings → Pages, set custom domain to `kitsworstnightmare.com` (auto-detected from CNAME file)
-- [ ] In DNS provider (wherever `kitsworstnightmare.com` is registered), add:
-  - 4× `A` records pointing to GitHub Pages IPs:
-    ```
-    185.199.108.153
-    185.199.109.153
-    185.199.110.153
-    185.199.111.153
-    ```
+- [x] In DNS provider (Route 53 via AWS CLI), add:
+  - 4× `A` records pointing to GitHub Pages IPs
   - 1× `CNAME` record: `www` → `bhirsch42.github.io`
-- [ ] Wait for DNS propagation; verify `https://kitsworstnightmare.com` loads the site
-- [ ] Enable "Enforce HTTPS" in GitHub Pages settings once cert is provisioned
+- [x] DNS propagated and resolving correctly
+- [ ] Enable "Enforce HTTPS" in GitHub Pages settings once cert is provisioned (cert pending)
