@@ -1,10 +1,10 @@
-const LS_SEEN = "kit-compliments-seen";
-const LS_DATE = "kit-compliments-date";
-const LS_CURRENT = "kit-compliments-current";
-
 // storage must implement getItem(key) / setItem(key, value) — pass localStorage in the browser.
 // today must be a YYYY-MM-DD string.
 function pickCompliment(compliments, storage, today) {
+  const LS_SEEN = "kit-compliments-seen";
+  const LS_DATE = "kit-compliments-date";
+  const LS_CURRENT = "kit-compliments-current";
+
   const storedDate = storage.getItem(LS_DATE);
   const storedCurrent = storage.getItem(LS_CURRENT);
 
@@ -42,5 +42,10 @@ function pickCompliment(compliments, storage, today) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { pickCompliment, LS_SEEN, LS_DATE, LS_CURRENT };
+  module.exports = {
+    pickCompliment,
+    LS_SEEN: "kit-compliments-seen",
+    LS_DATE: "kit-compliments-date",
+    LS_CURRENT: "kit-compliments-current",
+  };
 }
