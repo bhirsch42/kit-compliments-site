@@ -14,15 +14,15 @@
 
 ## Deployment: GitHub Pages
 
-- [ ] Create GitHub repo `kit-compliments-site` (public, so GitHub Pages is free)
-- [ ] Push `main` branch; enable GitHub Pages from Settings → Pages → deploy from `main` / root
+- [x] Create GitHub repo `kit-compliments-site` (public, so GitHub Pages is free)
+- [x] Push `main` branch; enable GitHub Pages from Settings → Pages → deploy from `main` / root
 - [x] Add `CNAME` file containing `kitsworstnightmare.com` (required by GitHub Pages for custom domain)
 - [x] Write `deploy.sh` — a one-command local deploy script (just `git push origin main`)
-- [ ] Verify site is live at `https://<username>.github.io/kit-compliments-site`
+- [ ] Verify site is live at `https://bhirsch42.github.io/kit-compliments-site`
 
 ## DNS / Custom Domain
 
-- [ ] In GitHub repo Settings → Pages, set custom domain to `kitsworstnightmare.com`
+- [x] In GitHub repo Settings → Pages, set custom domain to `kitsworstnightmare.com` (auto-detected from CNAME file)
 - [ ] In DNS provider (wherever `kitsworstnightmare.com` is registered), add:
   - 4× `A` records pointing to GitHub Pages IPs:
     ```
@@ -31,6 +31,6 @@
     185.199.110.153
     185.199.111.153
     ```
-  - 1× `CNAME` record: `www` → `<github-username>.github.io`
+  - 1× `CNAME` record: `www` → `bhirsch42.github.io`
 - [ ] Wait for DNS propagation; verify `https://kitsworstnightmare.com` loads the site
 - [ ] Enable "Enforce HTTPS" in GitHub Pages settings once cert is provisioned
