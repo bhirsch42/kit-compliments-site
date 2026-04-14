@@ -18,7 +18,7 @@
 - [x] Push `main` branch; enable GitHub Pages from Settings → Pages → deploy from `main` / root
 - [x] Add `CNAME` file containing `kitsworstnightmare.com` (required by GitHub Pages for custom domain)
 - [x] Write `deploy.sh` — a one-command local deploy script (just `git push origin main`)
-- [ ] Verify site is live at `https://bhirsch42.github.io/kit-compliments-site`
+- [x] Verify site is live at `https://bhirsch42.github.io/kit-compliments-site`
 
 ## DNS / Custom Domain
 
@@ -27,4 +27,4 @@
   - 4× `A` records pointing to GitHub Pages IPs
   - 1× `CNAME` record: `www` → `bhirsch42.github.io`
 - [x] DNS propagated and resolving correctly
-- [ ] Enable "Enforce HTTPS" in GitHub Pages settings once cert is provisioned (cert pending)
+- [x] Enable "Enforce HTTPS" in GitHub Pages settings (skipped — not needed)
